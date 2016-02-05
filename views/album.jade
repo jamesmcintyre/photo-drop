@@ -5,16 +5,37 @@ block content
       .panel-body
         .col-sm-12
           h1 Album
-        .col-sm-5.text-right#instruct
+        .col-md-8
+          h4 Album Photos
+          //- .panel.panel-default.col-md-2.imgpanel.albumTemplate
+          //-   .panel-body
+          //-     img.imgtile(src='', href='')
+          //-   .panel-footer Your Album
+          #albumPhotoList
+            .panel.panel-default.col-md-2.imgpanel.imgThumbTemplate
+              .panel-body
+                img.imgtile(src='https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg')
+              .panel-footer
+                p.imageName
+
+        .col-md-4
           h3 Add Photo
-          p Use the form to the right to add photos!
-        .col-sm-6
-          form.form-horizontal(action="/photos", method='post', enctype="multipart/form-data")
-            .form-group.is-fileinput
-              label.control-label(for='inputFile') Photo
-              input.form-control(type='text', readonly='', placeholder='Browse...')
-              input#inputFile(type='file',  name="photos", multiple=true)
-              span.material-input
-            .form-group
-              button.btn.btn-raised Submit
-                .ripple-container
+          p Use the form to add photos to this album!
+          .col-sm-12
+            form.form-horizontal(action="/photos", method='post', enctype="multipart/form-data")
+              .form-group
+                label.control-label(for="photoName") Name
+                input#photoName.form-control(type='text', name='name', placeholder='i.e. Charlie the cat!')
+              .form-group.is-fileinput
+                label.control-label(for='inputFile') Photo
+                input.form-control(type='text', readonly='', placeholder='Browse...')
+                input#inputFile(type='file',  name="photos", multiple=true)
+                span.material-input
+                input#albumId(type='hidden', name='albumId', value= album._id )
+              .form-group
+                button.btn.btn-raised Submit
+                  .ripple-container
+
+
+block scripts
+  script(src="/js/album.js")

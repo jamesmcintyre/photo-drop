@@ -20,7 +20,7 @@ var photoSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Album'
   },
-  description: { type: String},
+  name: { type: String},
   location: {type: String},
   tags: [{type: String}],
   url: {type: String}
@@ -30,7 +30,12 @@ var photoSchema = mongoose.Schema({
 
 //ADD PHOTO METHOD
 
-photoSchema.statics.addPhoto = function(imageFiles, cb){
+photoSchema.statics.addPhoto = function(addReq, cb){
+
+  var imageFiles = addReq.files;
+  var reqBody = addReq.body;
+
+  console.log(reqBody);
 
   async.each(imageFiles, function(imageFile, cb){
 
@@ -55,7 +60,9 @@ photoSchema.statics.addPhoto = function(imageFiles, cb){
       var url = process.env.AWS_URL + process.env.AWS_BUCKET + "/" + key + ext;
 
       var photo = new Photo({
-        url: url
+        url: url,
+        album: reqBody.albumId,
+        name: reqBody.name
       });
 
       photo.save(function(err){

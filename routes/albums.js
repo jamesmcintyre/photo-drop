@@ -12,7 +12,7 @@ var User = require('../models/user');
 router.get('/view/:albumId', User.isLoggedIn, function(req, res, next){
 
   Album.findById(req.params.albumId, function(err, album){
-    if(err) res.status(400).send(err);
+    if(err) return res.status(400).send(err);
       res.render('album', {album: album});
   });
 
@@ -23,7 +23,7 @@ router.get('/:userId', User.isLoggedIn, function(req, res, next){
 
   Album.find({owner: req.params.userId}, function(err, albums){
     console.log('album get error:  ', err)
-    if(err) res.status(400).send(err);
+    if(err) return res.status(400).send(err);
     res.send(albums);
       //res.render('albums', {albums: albums});
   });
@@ -38,7 +38,7 @@ router.get('/:userId', User.isLoggedIn, function(req, res, next){
 //POST NEW ALBUM
 router.post('/', User.isLoggedIn, function(req, res, next) {
   Album.create(req.body, function(err, newAlbum){
-    if(err) res.status(400).send(err);
+    if(err) return res.status(400).send(err);
     res.send();
   });
 });

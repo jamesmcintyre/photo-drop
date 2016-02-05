@@ -14,7 +14,7 @@ var upload = multer({storage: multer.memoryStorage() });
 router.get('/:userId', function(req, res, next) {
   var userId = req.params.userId;
   Photo.find({owner: userId}, function(err, photos){
-    if(err) res.status(400).send(err);
+    if(err) return res.status(400).send(err);
     //var userId = req.token._id;
     res.send(photos);
   })
@@ -23,12 +23,14 @@ router.get('/:userId', function(req, res, next) {
 
 
 //GET ALL ALBUM IMAGES
-router.get('/:albumId', function(req, res, next) {
+router.get('/album/:albumId', function(req, res, next) {
 
   var albumId = req.params.albumId;
 
+  console.log('get photos album id: ', albumId)
+
   Photo.find({album: albumId}, function(err, photos){
-    if(err) res.status(400).send(err);
+    if(err) return res.status(400).send(err);
     //var userId = req.token._id;
     res.send(photos);
   })
@@ -45,7 +47,7 @@ router.get('/:albumId', function(req, res, next) {
 
 //POST NEW PHOTO
 router.post('/', upload.array('photos'), function(req, res, next) {
-  Photo.addPhoto(req.files, function(err, addedPhotos){
+  Photo.addPhoto(req, function(err, addedPhotos){
     res.status(err ? 400 : 200).send(err || addedPhotos);
   });
 });
