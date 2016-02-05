@@ -1,0 +1,24 @@
+extends layout
+
+block content
+
+  .panel.panel-default
+    .panel-body
+      .col-sm-5.text-right#instruct
+        h3 Sign Up
+        p Use the form to the right to create an account!
+      .col-sm-6
+        form#register(action="users/register", method="post")
+          .form-group
+            label.control-label(for='name') Name
+            input.form-control(type='text', name="name", id="name", placeholder='First Last')           
+          .form-group
+            label.control-label(for='email') Email address
+            input.form-control(type='email', name="email", id="email", placeholder='Email')
+          .form-group
+            label.control-label(for='password') Password
+            input.pass.form-control(type='password', name="password", id="password", placeholder='Password')
+          .form-group
+            label.control-label(for='password2') Password Again
+            input.pass.form-control(type='password', name="password2", id="password2", placeholder='Password Again')
+          button#loginButton.btn.btn-default.btn-raised(type='submit') Register

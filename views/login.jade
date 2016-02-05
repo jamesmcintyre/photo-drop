@@ -1,0 +1,18 @@
+extends layout
+
+block content
+
+  .panel.panel-default
+    .panel-body
+      .col-sm-5.text-right#instruct
+        h3 Login
+        p Sign in to view your photos!
+      .col-sm-6
+        form#login(action="users/login", method="post")          
+          .form-group
+            label.control-label(for='email') Email address
+            input.form-control(type='email', name="email", id="email", placeholder='Email')
+          .form-group
+            label.control-label(for='password') Password
+            input.pass.form-control(type='password', name="password", id="password", placeholder='Password')
+          button#loginButton.btn.btn-default.btn-raised(type='submit') Login

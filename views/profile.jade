@@ -1,0 +1,85 @@
+extends layout
+
+block content
+  .panel.panel-default
+    .panel-body
+      .col-sm-12
+        h3 Your Albums
+          .text-right
+            button.btn.btn-raised.btn-success#addAlbum Add Album!
+              i.add-icon.material-icons add_box
+                .ripple-container
+      .modal.fade#addAlbumModal
+        .modal-dialog(role='document')
+          .modal-content
+            .modal-header
+              button.close(type='button', data-dismiss='modal', aria-label='Close')
+                span(aria-hidden='true') ×
+              h4.modal-title Add Album
+              p Use this form to create a new Album!
+            .modal-body.albumModal
+              .row
+                .col-sm-10.col-sm-offset-1
+                  form#addAlbumForm          
+                    .form-group
+                      label.control-label(for='albumTitle') Title
+                      input.form-control(type='text', name="albumTitle", id="albumTitle", placeholder='i.e. Family Vacation...')
+                    .form-group
+                      label.control-label(for='description') Description
+                      input.form-control(type='text', name="description", id="description", placeholder='Describe your album...')
+            .modal-footer
+              button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+              button#newAlbumButton.btn.btn-default.btn-raised.btn-success(type='submit', data-id= userData._id ) Add Album
+      
+      
+      .col-sm-12
+        .list-group#albumsList
+        
+        .albumTemplate
+            .list-group-item
+              .row-action-primary
+                a.folderLink(href='')
+                  i.material-icons folder
+              .row-content
+                a.titleLink(href='')
+                  h4.list-group-item-heading.albumTitle Album One
+                a.descLink(href='')
+                  p.list-group-item-text.albumDescription The description of your album.
+            .list-group-separator
+      
+      
+      //- .col-sm-12
+      //-   .panel.panel-default.col-md-2.imgpanel.albumTemplate
+      //-     .panel-body
+      //-       img.imgtile(src='', href='')
+      //-     .panel-footer Your Album
+        //- .panel.panel-default.col-md-2.imgpanel
+        //-   .panel-body
+        //-     img.imgtile(src='https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg')
+        //-   .panel-footer Cat Burrito
+        //- .panel.panel-default.col-md-2.imgpanel
+        //-   .panel-body
+        //-     img.imgtile(src='https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg')
+        //-   .panel-footer Cat Burrito
+        //- .panel.panel-default.col-md-2.imgpanel
+        //-   .panel-body
+        //-     img.imgtile(src='https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg')
+        //-   .panel-footer Cat Burrito
+        //- .panel.panel-default.col-md-2.imgpanel
+        //-   .panel-body
+        //-     img.imgtile(src='https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg')
+        //-   .panel-footer Cat Burrito
+        //- .panel.panel-default.col-md-2.imgpanel
+        //-   .panel-body
+        //-     img.imgtile(src='https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg')
+        //-   .panel-footer Cat Burrito
+        //- .panel.panel-default.col-md-2.imgpanel
+        //-   .panel-body
+        //-     img.imgtile(src='https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg')
+        //-   .panel-footer Cat Burrito
+        //- .panel.panel-default.col-md-2.imgpanel
+        //-   .panel-body
+        //-     img.imgtile(src='https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg')
+        //-   .panel-footer Cat Burrito
+mary(type='button') Save changes
+    

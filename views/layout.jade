@@ -1,0 +1,53 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/lib/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/lib/bootstrap-material-design/dist/css/bootstrap-material-design.min.css')
+    link(rel='stylesheet', href="/lib/bootstrap-material-design/dist/css/ripples.min.css")
+    link(rel="stylesheet", href="//fonts.googleapis.com/icon?family=Material+Icons")
+    link(rel='stylesheet', href='/css/style.css')
+    script(src="/lib/jquery/dist/jquery.min.js")
+    //- script(src="https://code.jquery.com/jquery-2.2.0.min.js")
+    script(src="/js/main.js")
+    //- script(src="/lib/bootstrap-material-design/dist/js/ripples.min.js")
+    //- script(src="/lib/bootstrap-material-design/dist/js/material.min.js")
+  body
+    .container
+      .navbar.navbar-inverse
+        .container-fluid
+          .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-warning-collapse')
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand(href='/')
+              i.material-icons photo_camera
+          .navbar-collapse.collapse.navbar-warning-collapse
+            ul.nav.navbar-nav
+              li.active
+                a(href='/') Home
+              //- li
+              //-   a(href='javascript:void(0)') Browse
+              //- li.dropdown
+              //-   a.dropdown-toggle(href='bootstrap-elements.html', data-target='#', data-toggle='dropdown')
+              //-     | Dropdown
+              //-     b.caret
+              //-   ul.dropdown-menu
+              //-     li
+              //-       a(href='javascript:void(0)') Action
+              //-     li
+              //-       a(href='javascript:void(0)') Another action
+              //-     li
+              //-       a(href='javascript:void(0)') Something else here
+              //-     li.divider
+              //-     li.dropdown-header Dropdown header
+              //-     li
+            ul.nav.navbar-nav.navbar-right
+              li
+                a(href='/login') Login
+              li
+                a(href='/register') Register
+      block content
+      
+      
