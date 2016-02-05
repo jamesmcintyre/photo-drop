@@ -8,7 +8,11 @@ var User = require('../models/user');
 
 router.post('/register', function(req, res, next) {
   User.register(req.body, function(err, savedUser) {
-    res.status(err ? 400 : 200).send(err || savedUser);
+    if(err){
+      res.status(400).send(err)
+    } else{
+      res.redirect('/login');
+    }
   });
 });
 
