@@ -39,11 +39,15 @@ router.get('/profile', User.isLoggedIn, function(req, res){
 
   User.findById(req.token._id, function(err, user){
       console.log('user:   ',user);
-      res.render('profile', {userData: user});
+      res.render('profile', {userData: user, title: 'Photo Drop', login: true});
   });
 });
 
 
+
+router.get('/logout', User.isLoggedIn, function(req, res){
+  res.clearCookie('userToken').redirect('/');
+});
 
 
 

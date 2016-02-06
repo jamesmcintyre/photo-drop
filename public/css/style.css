@@ -7,6 +7,13 @@ a {
   color: #00B7FF;
 }
 
+.tabline {
+  margin-bottom: 2vmax;
+}
+
+.navbar {
+  background-color: #46C5D2;
+}
 
 .photoThumb {
   margin: 0px 1vmax 1vmax 0px;
@@ -39,8 +46,12 @@ a {
 }
 
 #splash {
-  margin-top: 5vh;
+  margin-top: 2vmax;
   margin-bottom: 6vh;
+}
+
+.panel {
+  margin-top: 2vmax;
 }
 
 .navbar-brand a {

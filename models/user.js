@@ -81,6 +81,12 @@ userSchema.statics.isLoggedIn = function(req, res, next){
 
 };
 
+
+
+
+
+
+
 userSchema.methods.generateToken = function() {
   var payload = {
     uid: this.uid,

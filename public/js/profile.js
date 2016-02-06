@@ -6,7 +6,9 @@ $().ready(function(){
 
   getAlbums();
 
-
+  $('#mainContainer').addClass('animated fadeInUp').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+    $('#mainContainer').removeClass('animated fadeInUp');
+  });
 
 });
 

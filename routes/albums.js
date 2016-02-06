@@ -13,7 +13,7 @@ router.get('/view/:albumId', User.isLoggedIn, function(req, res, next){
 
   Album.findById(req.params.albumId, function(err, album){
     if(err) return res.status(400).send(err);
-      res.render('album', {album: album});
+      res.render('album', {album: album, title: 'Photo Drop', login: true});
   });
 
 });

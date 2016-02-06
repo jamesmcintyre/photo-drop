@@ -1,10 +1,14 @@
 extends layout
 
+
+block scripts
+  script(src="/js/index.js")
+
 block content
 
   .jumbotron#splash
     h1= title
-    p Welcome to #{title}
+    h3.tabline Create photo albums, add your photos and share with others! Click Sign Up to begin!
     .text-right
       form.form-horizontal(action="/register", method='get', enctype="multipart/form-data")
         button.btn.btn-raised.btn-lg.btn-success Sign Up!

@@ -15,7 +15,7 @@ html
     //- script(src="/lib/bootstrap-material-design/dist/js/material.min.js")
   body
     .container
-      .navbar.navbar-inverse
+      .navbar
         .container-fluid
           .navbar-header
             button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-warning-collapse')
@@ -27,28 +27,20 @@ html
           .navbar-collapse.collapse.navbar-warning-collapse
             ul.nav.navbar-nav
               li.active
-                a(href='/') Home
-              //- li
-              //-   a(href='javascript:void(0)') Browse
-              //- li.dropdown
-              //-   a.dropdown-toggle(href='bootstrap-elements.html', data-target='#', data-toggle='dropdown')
-              //-     | Dropdown
-              //-     b.caret
-              //-   ul.dropdown-menu
-              //-     li
-              //-       a(href='javascript:void(0)') Action
-              //-     li
-              //-       a(href='javascript:void(0)') Another action
-              //-     li
-              //-       a(href='javascript:void(0)') Something else here
-              //-     li.divider
-              //-     li.dropdown-header Dropdown header
-              //-     li
+                if (login === true)
+                  a(href='/users/profile') Home
+                else
+                  a(href='/') Home
             ul.nav.navbar-nav.navbar-right
-              li
-                a(href='/login') Login
-              li
-                a(href='/register') Register
+              if (login === false)
+                li
+                  a(href='/login') Login
+              if (login === false)
+                li
+                  a(href='/register') Sign Up
+              if (login === true)
+                li
+                  a(href='/users/logout') Logout
       block content
       
       block scripts
