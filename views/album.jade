@@ -11,12 +11,16 @@ block content
           //-   .panel-body
           //-     img.imgtile(src='', href='')
           //-   .panel-footer Your Album
+          //- #albumPhotoList
+          //-   .panel.panel-default.col-md-2.imgpanel.imgThumbTemplate
+          //-     .panel-body
+          //-       img.imgtile(src='https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg')
+          //-     .panel-footer
+          //-       p.imageName
           #albumPhotoList
-            .panel.panel-default.col-md-2.imgpanel.imgThumbTemplate
-              .panel-body
-                img.imgtile(src='https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg')
-              .panel-footer
-                p.imageName
+            .col-sm-2.photoThumb.imgThumbTemplate
+              img.photo.img-responsive.img-thumbnail(src='https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg')
+
 
         .col-md-4
           h3 Add Photo

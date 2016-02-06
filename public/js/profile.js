@@ -2,7 +2,7 @@ $().ready(function(){
 
   $('#addAlbum').on('click', addAlbumModal);
 
-  $('#newAlbumButton').on('click', addAlbum)
+  $('#newAlbumButton').on('click', addAlbum);
 
   getAlbums();
 

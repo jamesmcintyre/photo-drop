@@ -5,7 +5,8 @@ html
     link(rel='stylesheet', href='/lib/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet', href='/lib/bootstrap-material-design/dist/css/bootstrap-material-design.min.css')
     link(rel='stylesheet', href="/lib/bootstrap-material-design/dist/css/ripples.min.css")
-    link(rel="stylesheet", href="//fonts.googleapis.com/icon?family=Material+Icons")
+    link(rel="stylesheet", href="//fonts.googleapis.com/icon?family=Material+Icons|Roboto+Slab")
+    link(rel='stylesheet', href='/lib/animate.css/animate.min.css')
     link(rel='stylesheet', href='/css/style.css')
     script(src="/lib/jquery/dist/jquery.min.js")
     //- script(src="https://code.jquery.com/jquery-2.2.0.min.js")
@@ -21,8 +22,8 @@ html
               span.icon-bar
               span.icon-bar
               span.icon-bar
-            a.navbar-brand(href='/')
-              i.material-icons photo_camera
+            a.navbar-brand(href='/') #{ title }
+              //- i.material-icons photo_camera
           .navbar-collapse.collapse.navbar-warning-collapse
             ul.nav.navbar-nav
               li.active

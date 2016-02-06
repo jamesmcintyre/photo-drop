@@ -7,8 +7,11 @@ block content
       .col-sm-5.text-right#instruct
         h3 Login
         p Sign in to view your photos!
-      .col-sm-6
-        form#login(action="users/login", method="post")          
+      .col-sm-6.rightpanel
+        #regAlert.alert.alert-dismissible.alert-danger.template
+          button.close(type='button', data-dismiss='alert') ×
+          #errmsg
+        form#login         
           .form-group
             label.control-label(for='email') Email address
             input.form-control(type='email', name="email", id="email", placeholder='Email')
@@ -16,3 +19,6 @@ block content
             label.control-label(for='password') Password
             input.pass.form-control(type='password', name="password", id="password", placeholder='Password')
           button#loginButton.btn.btn-default.btn-raised(type='submit') Login
+
+block scripts
+  script(src="/js/login.js")

@@ -7,8 +7,35 @@ a {
   color: #00B7FF;
 }
 
+
+.photoThumb {
+  margin: 0px 1vmax 1vmax 0px;
+  padding: 0px;
+}
+
+.modal-footer {
+  padding-bottom: 23px !important;
+  padding-right: 23px !important;
+}
+
+.navbar-brand {
+  font-family: 'Roboto Slab', serif;
+}
+
+.rightpanel {
+  margin-bottom: 39px;
+}
+
 .imgThumbTemplate {
   display: none;
+}
+
+.template {
+  display: none;
+}
+
+#regAlert {
+  margin-top: 42px;
 }
 
 #splash {

@@ -5,13 +5,13 @@ block content
   .panel.panel-default
     .panel-body
       .col-sm-5.text-right#instruct
-        h3 Sign Up
-        p Use the form to the right to create an account!
+        h2 Sign Up
+        p Use this nifty form to create an account!
         
-    if message.length > 0
-      .col-sm-4.col-sm-offset-4
-        p <strong>FLASH!</strong> #{ message }
-      .col-sm-6
+      .col-sm-6.rightpanel
+        #regAlert.alert.alert-dismissible.alert-danger.template
+          button.close(type='button', data-dismiss='alert') ×
+          #errmsg
         form#register(action="users/register", method="post")
           .form-group
             label.control-label(for='name') Name
@@ -26,3 +26,6 @@ block content
             label.control-label(for='password2') Password Again
             input.pass.form-control(type='password', name="password2", id="password2", placeholder='Password Again')
           button#loginButton.btn.btn-default.btn-raised(type='submit') Register
+
+block scripts
+  script(src="/js/register.js")
