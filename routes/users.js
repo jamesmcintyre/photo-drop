@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
+
 var User = require('../models/user');
 
 
@@ -9,7 +10,9 @@ var User = require('../models/user');
 router.post('/register', function(req, res, next) {
   User.register(req.body, function(err, savedUser) {
     if(err){
-      res.status(400).send(err)
+      req.flash('error', err);
+      res.render('/register', {message: req.flash});
+      //res.status(400).send(err)
     } else{
       res.redirect('/login');
     }

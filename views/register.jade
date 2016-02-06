@@ -7,6 +7,10 @@ block content
       .col-sm-5.text-right#instruct
         h3 Sign Up
         p Use the form to the right to create an account!
+        
+    if message.length > 0
+      .col-sm-4.col-sm-offset-4
+        p <strong>FLASH!</strong> #{ message }
       .col-sm-6
         form#register(action="users/register", method="post")
           .form-group
